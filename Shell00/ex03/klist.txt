@@ -1,0 +1,5 @@
+Credentials cache: API:116FAF9A-91DC-448F-8331-7107A9FB6832
+        Principal: armendes@42.FR
+
+  Issued                Expires               Principal
+Aug  3 12:35:00 2020  Aug 10 12:35:00 2020  krbtgt/42.FR@42.FR
