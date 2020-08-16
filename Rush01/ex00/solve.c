@@ -6,13 +6,13 @@
 /*   By: armendes <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/15 09:48:11 by armendes          #+#    #+#             */
-/*   Updated: 2020/08/15 18:50:29 by armendes         ###   ########.fr       */
+/*   Updated: 2020/08/16 17:33:43 by armendes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "lib.h"
 
-int	g_stop = 0;
+int	g_verif = 0;
 
 void	disp(void)
 {
@@ -43,8 +43,6 @@ int		solve(int **tab, int row, int col)
 	val = 0;
 	while (++val <= 4)
 	{
-		if (g_stop == 1)
-			return (1);
 		if (place(row, col, val))
 		{
 			g_tab[row][col] = val;
@@ -52,9 +50,10 @@ int		solve(int **tab, int row, int col)
 			{
 				if (row == 3 && place_col(tab[0]) && place_col_r(tab[1]))
 				{
-					disp();
-					g_stop = 1;
-					return (1);
+					g_verif++;
+					if (g_verif == 1)
+						disp();
+					return (g_verif);
 				}
 				solve(tab, row + 1, 0);
 			}
@@ -62,7 +61,7 @@ int		solve(int **tab, int row, int col)
 				solve(tab, row, col + 1);
 		}
 	}
-	return (0);
+	return (g_verif);
 }
 
 int		main(int ac, char **av)
