@@ -6,7 +6,7 @@
 /*   By: armendes <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/15 09:48:11 by armendes          #+#    #+#             */
-/*   Updated: 2020/08/16 17:33:43 by armendes         ###   ########.fr       */
+/*   Updated: 2020/08/19 16:04:19 by armendes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,6 +75,11 @@ int		main(int ac, char **av)
 			tab = cut(av[1], 0);
 			if (!solve(tab, 0, 0))
 				ft_putstr("Error\n");
+			free(tab[0]);
+			free(tab[1]);
+			free(tab[2]);
+			free(tab[3]);
+			free(tab);
 		}
 		else
 			ft_putstr("Error\n");
